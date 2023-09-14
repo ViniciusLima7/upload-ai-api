@@ -19,9 +19,22 @@ Content-Type: audio/mpeg
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos/173ed66a-0bcb-49de-b3af-5d5e7c17a384/transcription
+POST http://localhost:3333/videos/21d8cd24-8cef-46ba-941b-47f35956909a/transcription
 Content-Type: application/json
 
 {
-    "prompt": "music gospel, daniel"
+    "prompt": "javascript tutorial, nova sintaxe"
+}
+
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+    "videoId": "21d8cd24-8cef-46ba-941b-47f35956909a",
+    "template": "Gere um resumo suscinto da transcrição da música informada a seguir: '''{transcription}'''",
+    "temperature": 0.5
 }
